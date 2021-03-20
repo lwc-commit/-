@@ -1,0 +1,672 @@
+﻿<!doctype html>
+<html lang="zh_CN" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<!doctype html>
+<html lang="zh_CN" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title> Hotux</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.png">
+        <!-- Bootstrap core CSS -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <!--Default CSS-->
+        <link href="static/css/default.css" rel="stylesheet" type="text/css">
+        <!--Custom CSS-->
+        <link href="static/css/style.css" rel="stylesheet" type="text/css">
+        <!--Plugin CSS-->
+        <link href="static/css/plugin.css" rel="stylesheet" type="text/css">
+        <link href="static/css/jquery.toast.min.css" rel="stylesheet" type="text/css">
+        <!--Font Awesome-->
+        <!--        <link rel="stylesheet" href="static/css/font-awesome.min.css">-->
+        <!--        <link rel="stylesheet" href="static/css/all.min.css">-->
+        <link rel="stylesheet" href="static/css/font-awesome.min.css">
+
+    </head>
+    <body>
+
+
+        <!-- Preloader -->
+        <!--        <div id="preloader">-->
+        <!--            <div id="status"></div>-->
+        <!--        </div>-->
+        <!-- Preloader Ends -->
+
+        <!-- header start -->
+        <header class="main_header_area">
+            <div class="header-content">
+                <div class="container">
+                    <div class="links links-left">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> info@abcd.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> 977-222-333-444</a></li>
+                        </ul>
+                    </div>
+                    <div class="links links-right pull-right">
+                        <ul style="display: none;" id="notLoginUl">
+                            <li>
+                                <a href="#" data-toggle="modal" id="btn-login-model" data-target="#login">
+                                    <i class="fa fa-user"></i>
+                                    登录
+                                </a>
+                            </li>
+                            <li><a href="#" data-toggle="modal" data-target="#register">
+                                <i class="fa fa-pencil"></i>
+                                注册</a>
+                            </li>
+                        </ul>
+                        <ul style="display: none;" id="loginUl">
+                            <li>
+                                <a href="/admin">
+                                    <i class="fa fa-dashboard"></i> 后台
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="btn-logout">
+                                    <i class="fa fa-user"></i>
+                                    退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Bar -->
+            <div class="header_menu affix-top">
+                <nav class="navbar navbar-default">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/">
+                                <img alt="Image" src="static/picture/logo.png" class="logo-white">
+                                <img alt="Image" src="static/picture/logo-black.png" class="logo-black">
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav" id="responsive-menu">
+                                <li class="dropdown submenu">
+                                    <a href="/" class="dropdown-toggle">首页</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/?cateId=1">单间</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/?cateId=2">大床房</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/?cateId=3">双人间</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/?cateId=4">三人间</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/?cateId=5">套房</a>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                    <div id="slicknav-mobile"></div>
+                </nav>
+            </div>
+            <!-- Navigation Bar Ends -->
+        </header>
+        <!-- header Ends -->
+
+
+
+
+<!-- breadcrumb starts -->
+<section class="breadcrumb-outer">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2>希望您有一段美好的旅途</h2>
+            <nav aria-label="breadcrumb">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">首页</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">客房列表</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb Ends -->
+
+    <div style="text-align: center;margin: 10px;border: 1px solid red;">
+        <p style="font-size: 1.2em;">
+            1. 本站为示例站，<a href="https://liuyanzhao.com/shop/1307556675552677888.html" style="color: red;">详细介绍地址点此</a>， 客户账号自行注册，工作人员后台查看<span style="color: red;">，管理员账号密码 admin/123456</span>
+            <br>
+            2. 为防止用户乱删除数据，系统每半小时自动自定清除一次数据，即导入初始数据进行覆盖 <br>
+            3. 发现BUG可以在 <a href="https://liuyanzhao.com/message.html" target="_blank" style="color:red;">留言板</a>反馈，当然也可以直接加我QQ/微信，如需购买，发现Bug者可以进行八折优惠 <br>
+            <span style="color: red;">4. 需要完整代码联系博主, 微信/QQ 847064370</span>，提供源码和远程部署，讲解服务。原创不易，请支持正版。<a
+                href="https://liuyanzhao.com" target="_blank">言曌博客</a>, 开发者交流群：590480292<br>
+            <span style="color: red;">5. 博主承接毕业设计项目、收徒带新人、问题解决等</span>，详情 <a href="https://liuyanzhao.com/notice/my-service.html" target="_blank" style="color: red;">点此</a>查看
+        </p>
+    </div>
+<!-- room list starts -->
+<section class="room-list">
+    <div class="container">
+        <div class="list-filter">
+            <form action="/" id="searchForm">
+            <div class="form-content text-center">
+                <div class="table-item">
+                    <div class="form-group">
+                        <div class="date-range-inner-wrapper">
+                            <input id="startDate" class="form-control" name="startDate" value="2021-03-20" placeholder="入住日期" title="入住日期">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-item">
+                    <div class="form-group form-icon">
+                        <select name="quantity">
+                            <option value="1">入住天数</option>
+                            <option value="1" selected="selected">1天</option>
+                            <option value="2">2天</option>
+                            <option value="3">3天</option>
+                            <option value="4">4天</option>
+                            <option value="5">5天</option>
+                            <option value="6">6天</option>
+                            <option value="7">7天</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-item">
+                    <div class="form-group form-icon">
+                        <select name="cateId">
+                            <option value="0">不限</option>
+                            <option value="1">单间</option>
+                            <option value="2">大床房</option>
+                            <option value="3">双人间</option>
+                            <option value="4">三人间</option>
+                            <option value="5">套房</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-item">
+                    <div class="form-btn">
+                        <a class="btn btn-orange" id="btn-search">快速查找</a>
+                        <input type="submit" id="submit-search" style="display: none">
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="list-content">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list2.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>海天大床房</h4>
+                                <p><i class="fa fa-tag"></i> ¥200/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 大床房
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S205
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/11?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list2.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>海天大床房</h4>
+                                <p><i class="fa fa-tag"></i> ¥200/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 大床房
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S205
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/13?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list2.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>海天大床房</h4>
+                                <p><i class="fa fa-tag"></i> ¥200/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 大床房
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S205
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/18?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list2.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>海天大床房</h4>
+                                <p><i class="fa fa-tag"></i> ¥200/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 大床房
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S205
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/20?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list9.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>经济单人间</h4>
+                                <p><i class="fa fa-tag"></i> ¥120/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 单间
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S204
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/10?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list9.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>经济单人间</h4>
+                                <p><i class="fa fa-tag"></i> ¥120/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 单间
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S204
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/12?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list9.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>经济单人间</h4>
+                                <p><i class="fa fa-tag"></i> ¥120/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 单间
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S204
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/17?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list9.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>经济单人间</h4>
+                                <p><i class="fa fa-tag"></i> ¥120/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 单间
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S204
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/19?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="room-item">
+                        <div class="room-image">
+                            <img src="static/picture/list9.jpg" alt="image">
+                        </div>
+                        <div class="room-content">
+                            <div class="room-title">
+                                <h4>情侣大床房</h4>
+                                <p><i class="fa fa-tag"></i> ¥200/天</p>
+<!--                                <div class="deal-rating">-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                    <span class="fa fa-star checked"></span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="room-services mar-bottom-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-bed" aria-hidden="true"></i> 单间
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <i class="fa fa-building" aria-hidden="true"></i> S203
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="height: 72px;overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci nulla, fermentum in faucibu...</p>
+                            <div class="room-btns">
+                                <a href="/post/9?startDate=2021-03-20&amp;quantity=1" class="btn btn-orange mar-right-10">查看&预定</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination-content text-center">
+            <ul class="pagination">
+                
+                <li class="active">
+                    <a href="?page=1&amp;startDate=2021-03-20&amp;quantity=1&amp;cateId=0">1</a>
+                </li>
+                <li>
+                    <a href="?page=2&amp;startDate=2021-03-20&amp;quantity=1&amp;cateId=0">2</a>
+                </li>
+                <li>
+                    <a href="?page=3&amp;startDate=2021-03-20&amp;quantity=1&amp;cateId=0">3</a>
+                </li>
+                <li><a href="?page=2&amp;startDate=2021-03-20&amp;quantity=1&amp;cateId=0"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- room list Ends -->
+
+<!-- Footer Starts -->
+<footer>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="copyright-content">
+                        <p>Copyright 2020. Made with <span>♥</span>. All Rights Reserved. <a
+                                href="#">Hotux</a></p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="tripadvisor-logo text-center">
+                        <img src="static/picture/tripadvisor.png" alt="image">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="copyright-links mar-bottom-20">
+                        <ul>
+                            <li><a href="#">Accomodations</a></li>
+                            <li><a href="#">Book Now</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="playstore-links">
+                        <img src="static/picture/appstore.png" alt="image" class="mar-right-10">
+                        <img src="static/picture/googleplay.png" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Ends -->
+
+<!-- Back to top start -->
+<div id="back-to-top">
+    <a href="#"></a>
+</div>
+<!-- Back to top ends -->
+
+<div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+        <div class="login-content">
+            <div class="login-image">
+                <img src="static/picture/logo-black.png" alt="image">
+            </div>
+            <h3>快速登录</h3>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="userName" placeholder="手机号码或身份证号码">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="userPass" placeholder="密码">
+                </div>
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="rememberMe" checked> 记住我
+<!--                    <a href="#">Forgot password?</a>-->
+                </div>
+            </form>
+            <div class="form-btn">
+                <a href="#" id="btn-login" class="btn btn-orange">登录</a>
+                <p>还没有账号?<a href="#" data-toggle="modal" data-target="#register">创建账号</a></p>
+                <p>忘记了密码?<a href="#" data-toggle="modal" data-target="#forget">重置密码</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="register" role="dialog">
+    <div class="modal-dialog">
+        <div class="login-content">
+            <div class="login-image">
+                <img src="static/picture/logo-black.png" alt="image">
+            </div>
+            <h3>创建账号</h3>
+            <form>
+                <div class="form-group">
+                    <input type="number" id="regUserName" placeholder="手机号码">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="userDisplayName" placeholder="姓名">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="idCard" placeholder="身份证号码">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="regUserPass" placeholder="密码">
+                </div>
+            </form>
+            <div class="form-btn">
+                <a href="#" id="btn-register" class="btn btn-orange">注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="forget" role="dialog">
+    <div class="modal-dialog">
+        <div class="login-content">
+            <div class="login-image">
+                <img src="static/picture/logo-black.png" alt="image">
+            </div>
+            <h3>重置密码</h3>
+            <form、>
+                <div class="form-group">
+                    <input type="number" id="forgetUserName" placeholder="手机号码">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="forgetIdCard" placeholder="身份证号码">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="forgetUserPass" placeholder="新密码">
+                </div>
+            </form>
+            <div class="form-btn">
+                <a href="#" id="btn-forget" class="btn btn-orange">重置密码</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- *Scripts* -->
+<script src="static/js/jquery-3.3.1.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/plugin.js"></script>
+<script src="static/js/main.js"></script>
+<script src="static/js/jquery.toast.min.js"></script>
+<script src="static/js/login.js"></script>
+<script src="static/js/custom-nav.js"></script>
+<script src="static/js/custom-swiper1.js"></script>
+<script src="static/js/custom-singledate.js"></script>
+</body>
+</html>
+
+
+
