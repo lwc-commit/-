@@ -1,16 +1,18 @@
 package com.lwc.graduation;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("com.lwc.graduation.mapper")
 public class GraduationApplication {
 
 	public static void main(String[] args) {
 
 
 
-		//sdsdassad
+
 		SpringApplication.run(GraduationApplication.class, args);
 	}
 
