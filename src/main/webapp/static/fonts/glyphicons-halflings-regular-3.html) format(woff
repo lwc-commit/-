@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Error>
+	<Code>NoSuchKey</Code>
+	<Message>The specified key does not exist.</Message>
+	<Resource>oss-liuyanzhao-1253316749.cos.ap-guangzhou.myqcloud.com/static/hotel/static/front/fonts/glyphicons-halflings-regular-3.html) format(woff</Resource>
+	<RequestId>NjA0MjIzZDRfMjEyZDdhNjRfNmMxZV9hYTNmNmY3</RequestId>
+	<TraceId>OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OWI2NmQ0YjJkZWE3NjcxYTUzN2Q1NDQzNjY0ZmI3ZTMyYzlhOTc5MDM4Mzc1M2IyZDY2NzY0NDUyYjAyZGNhOTk=</TraceId>
+</Error>
+
